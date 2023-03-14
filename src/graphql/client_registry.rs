@@ -1,5 +1,6 @@
 use graphql_client::{GraphQLQuery, Response};
 use serde_derive::{Deserialize, Serialize};
+use tracing::info;
 
 use super::QueryError;
 
