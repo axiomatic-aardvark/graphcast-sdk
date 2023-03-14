@@ -38,6 +38,9 @@ pub async fn query_registry_indexer(
     let queried_result =
         perform_graphcast_id_indexer_query(registry_subgraph_endpoint, variables).await?;
     let response_body: Response<indexers::ResponseData> = queried_result.json().await?;
+
+    info!("Response indexer: {:?}", response_body);
+
     if let Some(data) = response_body.data {
         data.indexers
             .first()
