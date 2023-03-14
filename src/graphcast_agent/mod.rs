@@ -200,6 +200,8 @@ impl GraphcastAgent {
     }
 
     pub async fn get_indexer_address(&self) -> Result<String, QueryError> {
+        info!("Inside get_indexer_address");
+
         query_registry_indexer(
             self.registry_subgraph.to_string(),
             graphcast_id_address(&self.wallet),

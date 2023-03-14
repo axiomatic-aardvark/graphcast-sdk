@@ -33,6 +33,8 @@ pub async fn query_registry_indexer(
     registry_subgraph_endpoint: String,
     graphcast_id_address: String,
 ) -> Result<String, QueryError> {
+    info!("Getting here");
+
     let variables: indexers::Variables = indexers::Variables {
         address: graphcast_id_address.clone(),
     };
